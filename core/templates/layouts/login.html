@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu portal Contable</title>
+     <!-- Font Awesome's core styling -->
+  <link href="{% static 'your-path-to-fontawesome/css/fontawesome.css' %}" rel="stylesheet">
+  <!-- individual Font Awesome icon styles - select just the ones you're using in your project -->
+  <link href="{% static 'your-path-to-fontawesome/css/brands.css' %}" rel="stylesheet">
+  <link href="{% static 'your-path-to-fontawesome/css/solid.css' %}" rel="stylesheet">
+  <link href="{% static 'your-path-to-fontawesome/css/sharp-thin.css' %}" rel="stylesheet">
+  <link href="{% static 'your-path-to-fontawesome/css/duotone-thin.css' %}" rel="stylesheet">
+  <link href="{% static 'your-path-to-fontawesome/css/sharp-duotone-thin.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bulma.min.css' %}" type="text/css"  rel="stylesheet">   
+     
+</head>
+    <body>
+        <section class="hero is-fullheight has-background-light bulma-text-00-l"> 
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    {% block content %} 
+                    {% endblock %}           
+                </div>
+            </div>
+        </section>    
+    </body>
+</html>
+<script src="https://kit.fontawesome.com/5e8155324c.js" crossorigin="anonymous"></script>
