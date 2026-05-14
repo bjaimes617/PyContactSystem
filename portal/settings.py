@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-@s54_3=c2==*y84-w!emz+x3&97!nmuzjs(4%5fm@z+q8myzfw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portal-contable.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
