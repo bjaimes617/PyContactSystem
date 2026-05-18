@@ -1,0 +1,37 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+    <div class="card card-primary">
+        <header class="card-header">
+            <p class="card-header-title">Carga de Comprobantes</p>
+            <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </button>
+        </header>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="card-content">
+                <div class="content">            
+                    {% csrf_token %}
+                    <div class="file has-name is-fullwidth">
+                        <label class="file-label">
+                        <input class="file-input" required type="file" name="resume" />
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">Buscar el Archivo en… </span>
+                        </span>
+                        <span class="file-name"> Screen Shot 2017-07-29 at 15.54.25.png </span>
+                        </label>
+                    </div>            
+                </div>
+            </div>
+            <footer class="card-footer">
+                <button type="submit" class="card-footer-item button is-primary" value="facturacion"><i class="fa-regular fa-file-lines"></i> Facturación</button>
+                <button type="submit" class="card-footer-item button is-info" value="retenciones"><i class="fa-solid fa-receipt"></i> Retenciones</button>
+                <button type="submit" class="card-footer-item button is-warning" value="notas_credito"><i class="fa-solid fa-scroll"></i> Notas de Crédito</button>
+            </footer>
+        </form>
+</div>
+{% endblock %}

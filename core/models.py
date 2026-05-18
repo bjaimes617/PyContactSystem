@@ -11,3 +11,14 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
 
+class Empresas(models.Model):
+    nombre = models.CharField(max_length=255)
+    detalle = models.CharField(max_length=255)
+    memo = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name = "Empresa"
+        verbose_name_plural = "Empresas"   
+        
+    def __str__(self):
+        return self.nombre    
