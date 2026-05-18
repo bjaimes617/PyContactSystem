@@ -1,19 +1,20 @@
 {% extends 'layouts/login.html' %} 
 {% load static %}
 {% block content %}
-<div class="column is-6 is-offset-3">
-    <h3 class="title has-text-black">Inicio de Sesion</h3>
-    <hr class="login-hr" />
-    <p class="subtitle has-text-black">Tu herramienta Contable de confianza.</p>
+<div class="column is-4 is-offset-4">  
+   
     <div class="box">
+         <h3 class="title has-text-black">Inicio de Sesion</h3> 
+    <hr class="login-hr"/>
+    <p class="subtitle has-text-grey-dark">Tu herramienta Contable de confianza.</p>
         <figure class="avatar">
-            <img src="{% static '/image/image_e92c9e03.WebP' %}" />
+            <img src="{% static '/image/image_3599f037.WebP' %}" />
         </figure>
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}            
             {% if messages %}
                 {% for message in messages %}                
-                    <div class="notification is-danger is-light">
+                    <div class="notification is-danger is-light is-small has-text-left">
                         {{ message }}
                     </div>
                 {% endfor %}
@@ -34,13 +35,7 @@
                         <i class="fas fa-lock"></i>
                     </span>
                 </div>  
-            </div>
-            <div class="field">
-                <label class="checkbox">
-                    <input type="checkbox" />
-                    Remember me
-                </label>
-            </div>
+            </div>            
             <button class="button is-block is-info is-fullwidth">
                Conectar <i class="fa fa-sign-in" aria-hidden="true"></i>
             </button>

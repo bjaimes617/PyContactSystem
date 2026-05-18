@@ -121,6 +121,5 @@ AUTH_USER_MODEL = 'core.CustomUser'
 
 # Permitir login con email
 AUTHENTICATION_BACKENDS = [
-    'core.backends.EmailBackend',
-    'django.contrib.auth.backends.ModelBackend',
+    'core.backends.EmailBackend',    
 ]

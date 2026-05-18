@@ -61,5 +61,7 @@ def dashboard(request):
 
 @login_required
 def logout(request):   
-    auth_logout(request)
-    return redirect('index')   
+    if request.method == 'POST':
+        auth_logout(request)
+        return redirect('index')
+    return redirect('dashboard')

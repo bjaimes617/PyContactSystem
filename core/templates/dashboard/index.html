@@ -1,5 +1,10 @@
 {% extends 'layouts/main.html' %} 
-{% load static %}
-{% block content %}    
-    INICIO DE SESION CORRECTO
+{% load static%}
+{% block content %}      
+<div class="card">
+    <div class="card-content">
+        <h1 class="title">Bienvenid@, {{ user.first_name }} {{ user.last_name }}</h1>
+        <p class="subtitle">Aquí encontrarás todas las herramientas que necesitas para llevar tu contabilidad de manera eficiente y organizada.</p>
+    </div>
+</div>
 {% endblock %}

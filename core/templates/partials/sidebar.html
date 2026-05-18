@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="navbar is-fixed-top has-background-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <style>
+            .navbar-logo-custom {
+                max-height: 3.5rem !important; /* Ajusta este valor para hacerla más grande o pequeña */
+                width: auto;
+            }
+        </style>
+        <a class="navbar-item" href="{% url 'dashboard' %}" style="padding: 0.5rem 1rem;">
+            <img src="{% static '/image/Gemini_Generated_Image_k0y5uek0y5uek0y5.png' %}"
+                alt="Logo Portal Contable"
+                class="navbar-logo-custom"/> PORTAL CONTABLE
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>        
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+            <Home>
+            </a>
+
+            <a class="navbar-item" href="{% url 'Cargador' %}">
+            Declaraciones
+            </a>            
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+               
+                <a class="navbar-link">
+                    <figure class="image is-32x32">
+                    <img class="is-rounded  is-primary" src="{% static '/image/user.png' %}" />
+                </figure>
+                   {{ user.first_name|default:user.username }}
+                </a>
+                <div class="navbar-dropdown is-right">
+                     <a class="navbar-item">
+                        <p> {{ user.first_name }} {{ user.last_name }}</p>
+                        <p><i class="fa fa-calendar" aria-hidden="true"></i> Suscripción Finaliza: {{ user.expire_premium }}</p>
+                     </a>                     
+                    <hr class="navbar-divider">
+                   <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="navbar-item  is-primary is-selected">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesion
+                    </button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
